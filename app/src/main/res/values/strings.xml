@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Registro</string>
+    <string name="action_new_person">Nueva Persona</string>
+    <string name="action_about">Acerca de</string>
+    <string name="title_activity_about">Acerca de</string>
+    <string name="title_activity_register">Persona</string>
+
+
+    <string name="message_name">Nombre</string>
+    <string name="message_last_name_f">Apellido Paterno</string>
+    <string name="message_last_name_m">Apellido Materno</string>
+    <string name="message_site">Sito Web</string>
+    <string name="message_address">Dirección</string>
+
+    <string name="btn_msg_save">Guardar</string>
+
+    <string name="action_back">Atras</string>
+</resources>
