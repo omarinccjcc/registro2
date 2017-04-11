@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.Random;
+
 import pe.edu.upeu.registro.bean.Person;
 
 public class Register extends AppCompatActivity {
@@ -32,13 +34,17 @@ public class Register extends AppCompatActivity {
         txtLastNameM = (EditText) findViewById(R.id.txtLastNameM);
         Button btnSave = (Button)findViewById(R.id.btnSave);
 
+
+
+
         btnSave.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                MainActivity.listPerson.add(new Person(1,txtNombre.getText().toString(),txtLastNameF.getText().toString(),txtLastNameM.getText().toString(),"www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca"));
+                Random rn = new Random();
+                int answer = rn.nextInt(1000) + 1;
+                MainActivity.listPerson.add(new Person(answer,txtNombre.getText().toString(),txtLastNameF.getText().toString(),txtLastNameM.getText().toString(),"www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca"));
                 goMain();
             }
         });
-
     }
 
     public void goMain(){

@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static List<Person> listPerson = new ArrayList<Person>();
 
+    public int personId=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, " Hola: "+parent.getItemAtPosition(position),
+                Person person = (Person)parent.getItemAtPosition(position);
+                personId=person.getId();
+                Toast.makeText(MainActivity.this, person.getId()+" Hola: "+person.getName(),
                         Toast.LENGTH_SHORT).show();
             }
         });
@@ -59,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
                 goRegister();
             }
         });
-
     }
 
     public void goRegister(){
@@ -82,9 +85,11 @@ public class MainActivity extends AppCompatActivity {
                 //Intent i = new Intent(this,Register.class);
                 //startActivity(i);
                 break;
-            case R.id.action_activate:
-                //Intent i = new Intent(this,Register.class);
-                //startActivity(i);
+            case R.id.action_edit:
+                Intent i = new Intent(this,Register.class);
+                // envia id persona a la otra actividad
+                i.putExtra("personId",personId);
+                startActivity(i);
                 break;
             case R.id.action_about:
                 Intent ii = new Intent(this,About.class);
