@@ -4,6 +4,8 @@
     <string name="action_about">Acerca de</string>
     <string name="title_activity_about">Acerca de</string>
     <string name="title_activity_register">Persona</string>
+    <string name="action_synchronize">Sincroniza</string>
+    <string name="action_activate">Activar</string>
 
 
     <string name="message_name">Nombre</string>

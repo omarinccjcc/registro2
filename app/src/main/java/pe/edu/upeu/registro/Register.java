@@ -35,16 +35,17 @@ public class Register extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 MainActivity.listPerson.add(new Person(1,txtNombre.getText().toString(),txtLastNameF.getText().toString(),txtLastNameM.getText().toString(),"www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca"));
-                txtNombre.setText("");
-                txtLastNameF.setText("");
-                txtLastNameM.setText("");
+                goMain();
             }
         });
 
-        // MainActivity.listPerson.add(new Person(2,"Juan","Perez","Perez","www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca"));
-        // MainActivity.listPerson.add(new Person(3,"Lesly","Aguilar","Chaguares","www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca"));
-        // MainActivity.listPerson.add(new Person(4,"Jose Manuel","Limachi","Chavez","www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca"));
     }
+
+    public void goMain(){
+        Intent i = new Intent(this,MainActivity.class);
+        startActivity(i);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

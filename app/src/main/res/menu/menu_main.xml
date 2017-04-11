@@ -4,10 +4,15 @@
     tools:context="pe.edu.upeu.registro.MainActivity">
 
     <item
-        android:id="@+id/action_new_person"
+        android:id="@+id/action_synchronize"
         android:orderInCategory="100"
-        android:title="@string/action_new_person"
-        app:showAsAction="never" />
+        android:title="@string/action_synchronize"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_activate"
+        android:orderInCategory="100"
+        android:title="@string/action_activate"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_about"

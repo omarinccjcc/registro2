@@ -52,6 +52,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goRegister();
+            }
+        });
+
+    }
+
+    public void goRegister(){
+        Intent i = new Intent(this,Register.class);
+        startActivity(i);
     }
 
     @Override
@@ -65,10 +78,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()){
-            case R.id.action_new_person:
-                Intent i = new Intent(this,Register.class);
-                startActivity(i);
-
+            case R.id.action_synchronize:
+                //Intent i = new Intent(this,Register.class);
+                //startActivity(i);
+                break;
+            case R.id.action_activate:
+                //Intent i = new Intent(this,Register.class);
+                //startActivity(i);
                 break;
             case R.id.action_about:
                 Intent ii = new Intent(this,About.class);
