@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goRegister(){
         Intent i = new Intent(this,Register.class);
+        i.putExtra("personId",0);
         startActivity(i);
     }
 

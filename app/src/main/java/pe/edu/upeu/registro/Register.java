@@ -11,7 +11,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import java.util.List;
 import java.util.Random;
 
 import pe.edu.upeu.registro.bean.Person;
@@ -34,15 +36,28 @@ public class Register extends AppCompatActivity {
         txtLastNameM = (EditText) findViewById(R.id.txtLastNameM);
         Button btnSave = (Button)findViewById(R.id.btnSave);
 
+        // para obtener valores enviados de la otra actividad
+        Bundle parameters = getIntent().getExtras();
+        final int personId = (int) parameters.getInt("personId");
 
+        if(personId!=0){
+            Person person = getPersonById(personId);
+            txtNombre.setText(person.getName());
+            txtLastNameF.setText(person.getLastNameF());
+            txtLastNameM.setText(person.getLastNameM());
+        }
 
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Random rn = new Random();
-                int answer = rn.nextInt(1000) + 1;
-                MainActivity.listPerson.add(new Person(answer,txtNombre.getText().toString(),txtLastNameF.getText().toString(),txtLastNameM.getText().toString(),"www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca"));
-                goMain();
+                if(personId!=0){
+                    Random rn = new Random();
+                    int answer = rn.nextInt(1000) + 1;
+                    MainActivity.listPerson.add(new Person(answer,txtNombre.getText().toString(),txtLastNameF.getText().toString(),txtLastNameM.getText().toString(),"www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca"));
+                    goMain();
+                }else{
+                    //modifique
+                }
             }
         });
     }
@@ -70,4 +85,17 @@ public class Register extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+    public Person getPersonById(int personId){
+        List<Person> listPerson = MainActivity.listPerson ;
+
+        for (Person person:listPerson){
+            if(person.getId()==personId){
+                return person;
+            }
+        }
+        return null;
+    }
+
 }
