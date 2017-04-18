@@ -1,5 +1,7 @@
 package pe.edu.upeu.registro.bean;
 
+import android.content.Intent;
+
 /**
  * Created by Alumnos on 04/04/2017.
  */
@@ -12,16 +14,18 @@ public class Person {
     private String lastNameM;
     private String site;
     private String address;
+    private Integer photo;
 
     public Person(){}
 
-    public Person(int id, String name, String lastNameF, String lastNameM, String site, String address) {
+    public Person(int id, String name, String lastNameF, String lastNameM, String site, String address,Integer photo) {
         this.id = id;
         this.name = name;
         this.lastNameF = lastNameF;
         this.lastNameM = lastNameM;
         this.site = site;
         this.address = address;
+        this.photo = photo;
     }
 
     public int getId() {
@@ -70,6 +74,14 @@ public class Person {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Integer getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Integer photo) {
+        this.photo = photo;
     }
 
     @Override
