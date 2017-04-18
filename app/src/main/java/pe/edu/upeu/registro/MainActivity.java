@@ -96,6 +96,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent ii = new Intent(this,About.class);
                 startActivity(ii);
                 break;
+            case R.id.action_contacts:
+                Intent contactIntent = new Intent(this,ContactActivity.class);
+                startActivity(contactIntent);
+                break;
         }
         /*
         int id = item.getItemId();

@@ -1,6 +1,7 @@
 package pe.edu.upeu.registro;
 
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -50,23 +52,34 @@ public class Register extends AppCompatActivity {
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                if(personId!=0){
+                if(personId==0){
                     Random rn = new Random();
                     int answer = rn.nextInt(1000) + 1;
                     MainActivity.listPerson.add(new Person(answer,txtNombre.getText().toString(),txtLastNameF.getText().toString(),txtLastNameM.getText().toString(),"www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca"));
-                    goMain();
                 }else{
-                    //modifique
+                    updatePerson(personId,txtNombre.getText().toString(),txtLastNameF.getText().toString(),txtLastNameM.getText().toString());
                 }
+                goMain();
             }
         });
+    }
+
+    public void updatePerson(int personId, String name, String lastNameF, String lastNameM) {
+        List<Person> listPerson2=new ArrayList<Person>();
+        for (Person person:MainActivity.listPerson){
+            if(person.getId()==personId){
+                person.setName(name);
+                person.setLastNameF(lastNameF);
+                person.setLastNameM(lastNameM);
+            }
+            listPerson2.add(person);
+        }
     }
 
     public void goMain(){
         Intent i = new Intent(this,MainActivity.class);
         startActivity(i);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -18,4 +18,10 @@
     <string name="btn_msg_save">Guardar</string>
 
     <string name="action_back">Atras</string>
+
+
+    <string name="action_contacts">Contactos</string>
+    <string name="title_activity_contact">ContactActivity</string>
+
+
 </resources>
