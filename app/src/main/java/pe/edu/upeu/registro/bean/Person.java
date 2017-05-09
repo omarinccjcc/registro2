@@ -8,31 +8,39 @@ import android.content.Intent;
 
 public class Person {
 
-    private int id;
+    private Long id;
     private String name;
     private String lastNameF;
     private String lastNameM;
     private String site;
     private String address;
-    private Integer photo;
+    private String sex;
+    private String status;
+    private String statusMarried;
+    private Double score;
+    private String photo;
 
     public Person(){}
 
-    public Person(int id, String name, String lastNameF, String lastNameM, String site, String address,Integer photo) {
+    public Person(Long id, String name, String lastNameF, String lastNameM, String site, String address, String sex, String status, String statusMarried, Double score, String photo) {
         this.id = id;
         this.name = name;
         this.lastNameF = lastNameF;
         this.lastNameM = lastNameM;
         this.site = site;
         this.address = address;
+        this.sex = sex;
+        this.status = status;
+        this.statusMarried = statusMarried;
+        this.score = score;
         this.photo = photo;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -76,11 +84,43 @@ public class Person {
         this.address = address;
     }
 
-    public Integer getPhoto() {
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStatusMarried() {
+        return statusMarried;
+    }
+
+    public void setStatusMarried(String statusMarried) {
+        this.statusMarried = statusMarried;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(Integer photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 

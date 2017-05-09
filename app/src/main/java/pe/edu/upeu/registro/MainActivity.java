@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static List<Person> listPerson = new ArrayList<Person>();
 
-    public int personId=0;
+    public Long personId=0L;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

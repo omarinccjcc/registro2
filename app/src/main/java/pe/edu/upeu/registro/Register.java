@@ -55,7 +55,7 @@ public class Register extends AppCompatActivity {
                 if(personId==0){
                     Random rn = new Random();
                     int answer = rn.nextInt(1000) + 1;
-                    MainActivity.listPerson.add(new Person(answer,txtNombre.getText().toString(),txtLastNameF.getText().toString(),txtLastNameM.getText().toString(),"www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca",2));
+                    //MainActivity.listPerson.add(new Person(answer,txtNombre.getText().toString(),txtLastNameF.getText().toString(),txtLastNameM.getText().toString(),"www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca","2"));
                 }else{
                     updatePerson(personId,txtNombre.getText().toString(),txtLastNameF.getText().toString(),txtLastNameM.getText().toString());
                 }

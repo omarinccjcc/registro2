@@ -59,7 +59,7 @@ public class PersonaListAdapter extends ArrayAdapter<Person> {
 
         viewHolder.site.setText(person.getSite());
         viewHolder.address.setText(person.getAddress());
-        viewHolder.photo.setImageResource(person.getPhoto());
+        //viewHolder.photo.setImageResource(person.getPhoto());
 
         return contentView;
     }

@@ -26,10 +26,10 @@ public class ContactActivity extends AppCompatActivity {
 
         ListView listView=(ListView)findViewById(R.id.listView);
 
-        listPerson.add(new Person(1,"Omar","Calsin","Curo","www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca",R.drawable.descarga));
-        listPerson.add(new Person(2,"Juan","Perez","Perez","www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca",R.drawable.ic_edit));
-        listPerson.add(new Person(3,"Lesly","Aguilar","Chaguares","www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca",R.drawable.images));
-        listPerson.add(new Person(4,"Jose Manuel","Limachi","Chavez","www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca",R.drawable.images2));
+        //listPerson.add(new Person(1,"Omar","Calsin","Curo","www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca",R.drawable.descarga));
+        //listPerson.add(new Person(2,"Juan","Perez","Perez","www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca",R.drawable.ic_edit));
+        //listPerson.add(new Person(3,"Lesly","Aguilar","Chaguares","www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca",R.drawable.images));
+        //listPerson.add(new Person(4,"Jose Manuel","Limachi","Chavez","www.ocalsin.com","Av: Manuel Nuñez B. 212 - Juliaca",R.drawable.images2));
 
         PersonaListAdapter adapter = new PersonaListAdapter(this,listPerson);
 
