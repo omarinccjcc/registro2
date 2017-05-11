@@ -33,12 +33,61 @@ public class ExampleInstrumentedTest {
         person.setName("Omar");
         person.setLastNameF("Perez");
         person.setLastNameM("Perez2");
-        dao.savePerson(person);
+        //dao.savePerson(person);
 
         List<Person> list = dao.findPersonAll();
+        for(Person personObject:list){
+            Log.i("list:::",personObject.getId()+" - "+personObject.getName());
+        }
+
 
         Log.i("list:::",list.size()+"");
 
         dao.close();
     }
+
+    @Test
+    public void testUpdatePerson()throws Exception {
+        Context appContext = InstrumentationRegistry.getTargetContext();
+        PersonDAO dao = new PersonDAO(appContext);
+        Person person = dao.findPersonById(3L);
+        Log.i("Name",person.getName());
+        //dao.fin
+    }
+
+    @Test
+    public void testFindPersonById(){
+        Context appContext = InstrumentationRegistry.getTargetContext();
+        PersonDAO dao = new PersonDAO(appContext);
+        Person person = dao.findPersonById(4L);
+        Log.i("Name:::",person.getName());
+        person.setName("Simons");
+        dao.updatePerson(person);
+    }
+
+    @Test
+    public void testDelete(){
+        Context appContext = InstrumentationRegistry.getTargetContext();
+        PersonDAO dao = new PersonDAO(appContext);
+        Person person = dao.findPersonById(4L);
+        assertNotNull(person);
+
+        dao.deletePersonById(4L);
+        person = dao.findPersonById(4L);
+        assertNull(person);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
